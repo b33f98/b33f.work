@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Futuristic Website</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: radial-gradient(circle at top, #0f0f1e, #000);
+      color: #e0e0ff;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 1rem 2rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #00f0ff;
+      backdrop-filter: blur(6px);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #00f0ff;
+      animation: glow 2s infinite alternate;
+    }
+
+    nav a {
+      color: #e0e0ff;
+      text-decoration: none;
+      margin-left: 2rem;
+      transition: color 0.3s, text-shadow 0.3s;
+    }
+
+    nav a:hover {
+      color: #00f0ff;
+      text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
+    }
+
+    section {
+      padding: 6rem 2rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    #hero {
+      background: linear-gradient(to bottom right, #000, #0a0a2a);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(from 0deg, transparent, #00f0ff, transparent 30%);
+      animation: rotate 10s linear infinite;
+      opacity: 0.15;
+    }
+
+    #hero h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #00f0ff;
+      animation: glow 2s infinite alternate;
+    }
+
+    #hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-bottom: 2rem;
+      animation: fadeIn 2s ease-in;
+    }
+
+    .btn {
+      padding: 0.8rem 2rem;
+      background: #00f0ff;
+      color: #000;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+      box-shadow: 0 0 10px #00f0ff;
+    }
+
+    .btn:hover {
+      background: #00aacc;
+      transform: scale(1.08);
+      box-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff;
+    }
+
+    #about, #contact {
+      background: #0a0a1f;
+    }
+
+    #about h2, #contact h2 {
+      color: #00f0ff;
+      margin-bottom: 1rem;
+      animation: fadeInUp 1.5s ease-out;
+    }
+
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 1rem;
+      border-top: 1px solid #00f0ff;
+      color: #888;
+      animation: fadeIn 3s ease-in;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #00f0ff; }
+      to { text-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>AI Future</h1>
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="hero">
+    <h2>The Future is AI</h2>
+    <p>Exploring cutting-edge developments in artificial intelligence and how they reshape our world.</p>
+    <button class="btn">Learn More</button>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>We are a community of AI enthusiasts, researchers, and developers dedicated to pushing the boundaries of technology. Our mission is to make AI accessible and beneficial for everyone.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Have questions or want to collaborate? Reach out to us!</p>
+    <p>Email: <a href="mailto:info@aifuture.com">info@aifuture.com</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 AI Future. All rights reserved.</p>
+  </footer>
+</body>
+</html>
