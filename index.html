@@ -63,6 +63,14 @@
       justify-content: center;
       align-items: center;
       text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     #hero {
@@ -96,7 +104,6 @@
       font-size: 1.2rem;
       max-width: 600px;
       margin-bottom: 2rem;
-      animation: fadeIn 2s ease-in;
       z-index: 1;
     }
 
@@ -119,14 +126,13 @@
       box-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff;
     }
 
-    #about, #contact {
+    #about, #projects, #contact {
       background: #0a0a1f;
     }
 
-    #about h2, #contact h2 {
+    #about h2, #projects h2, #contact h2 {
       color: #00f0ff;
       margin-bottom: 1rem;
-      animation: fadeInUp 1.5s ease-out;
     }
 
     footer {
@@ -135,22 +141,18 @@
       padding: 1rem;
       border-top: 1px solid #00f0ff;
       color: #888;
-      animation: fadeIn 3s ease-in;
+    }
+
+    footer span {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #555;
     }
 
     @keyframes glow {
       from { text-shadow: 0 0 5px #00f0ff; }
       to { text-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff; }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes gridmove {
@@ -165,6 +167,7 @@
     <nav>
       <a href="#hero">Home</a>
       <a href="#about">About</a>
+      <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -180,6 +183,11 @@
     <p>I’m Simon, an AI student and builder. I create projects that merge creativity with artificial intelligence, making technology both powerful and accessible.</p>
   </section>
 
+  <section id="projects">
+    <h2>Projects</h2>
+    <p>Coming soon: a showcase of my AI experiments and creations.</p>
+  </section>
+
   <section id="contact">
     <h2>Contact</h2>
     <p>TBA</p>
@@ -187,6 +195,23 @@
 
   <footer>
     <p>&copy; 2025 B33f. All rights reserved.</p>
+    <span>Made with curiosity & code by Simon</span>
   </footer>
+
+  <script>
+    // Scroll reveal effect
+    const sections = document.querySelectorAll('section');
+    const revealOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach(sec => {
+        const boxTop = sec.getBoundingClientRect().top;
+        if (boxTop < triggerBottom) {
+          sec.classList.add('visible');
+        }
+      });
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
 </body>
 </html>
